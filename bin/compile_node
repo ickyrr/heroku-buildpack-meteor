@@ -101,7 +101,7 @@ if [ "$npm_engine" != "" ]; then
     npm_engine=$(curl --silent --get --data-urlencode "range=${npm_engine}" https://semver.herokuapp.com/npm/resolve)
   fi
   info "Downloading and installing npm $npm_engine (replacing version `npm --version`)..."
-  npm install --quiet -g npm@$npm_engine > /dev/null 2>&1 | indent
+  npm install
 fi
 
 # Run subsequent commands from the build directory
